@@ -72,23 +72,22 @@ import penguins from "./penguins.json" with { type: 'json' };
 
 console.log("--- MÉTHODES DE TRANSFORMATION ---");
 
-// map() - Transforme chaque élément et crée un nouveau tableau
-const descriptions = penguins.slice(0, 3).map(p => 
-    `${p.species} (${p.sex}) - ${p.body_mass_g}g`
-);
-console.log("• map() - Descriptions des 3 premiers:");
-descriptions.forEach(desc => console.log("  ", desc));
-
+// // map() - Transforme chaque élément et crée un nouveau tableau
+// const descriptions = penguins.slice(0, 3).map(p => 
+//     `${p.species} (${p.sex}) - ${p.body_mass_g}g`
+// );
+// console.log("• map() - Descriptions des 3 premiers:");
+// descriptions.forEach(desc => console.log("  ", desc));
 // /* IMPORTANT : noter ce code 
 //  * L'usage de `map` pour n'extraire qu'une propriété.
 //  * Et l'usage de `[...new Set()]` sur le résultat pour ne garder que les noms uniques
 //  * Cela servira pour le prochain TP
 //  */
 
-// const nomsEspeces = penguins.map(/* TODO */);
+// const nomsEspeces = penguins.map(p => p.species);
 // console.log("• map() - Espèces uniques:", [...new Set(nomsEspeces)]);
 
-// // flatMap() - Applique une fonction puis aplatit d'un niveau
+// flatMap() - Applique une fonction puis aplatit d'un niveau
 // const caracteristiques = penguins.slice(0, 2).flatMap(p => 
 //     [p.species, p.island, p.sex]
 // );
@@ -96,15 +95,15 @@ descriptions.forEach(desc => console.log("  ", desc));
 
 // // reduce() - Réduit le tableau à une seule valeur
 // const masseTotale = penguins.reduce((total, p) => 
-//     p.body_mass_g != null ? total + /* TODO */ : total, 0
+//     p.body_mass_g != null ? total + p.body_mass_g : total, 0
 // );
 // console.log("• reduce() - Masse totale:", masseTotale, "grammes");
 
-// const nbrParEspece = penguins.reduce((acc, p) => {
-//     acc[/* TODO */] = (acc[/* TODO */] || 0) + 1;
-//     return acc;
-// }, {} as Record<string, number>);
-// console.log("• reduce() - Comptage par espèce:", nbrParEspece);
+const nbrParEspece = penguins.reduce((acc, p) => {
+    acc[/* TODO */] = (acc[/* TODO */] || 0) + 1;
+    return acc;
+}, {} as Record<string, number>);
+console.log("• reduce() - Comptage par espèce:", nbrParEspece);
 
 // // reduceRight() - Réduit de droite à gauche
 // const derniersNoms = penguins.slice(-3).reduceRight((acc, p) => 
