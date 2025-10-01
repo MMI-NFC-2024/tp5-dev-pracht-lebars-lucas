@@ -99,13 +99,13 @@ console.log("--- MÉTHODES DE TRANSFORMATION ---");
 // );
 // console.log("• reduce() - Masse totale:", masseTotale, "grammes");
 
-const nbrParEspece = penguins.reduce((acc, p) => {
-    acc[/* TODO */] = (acc[/* TODO */] || 0) + 1;
-    return acc;
-}, {} as Record<string, number>);
-console.log("• reduce() - Comptage par espèce:", nbrParEspece);
+// const nbrParEspece = penguins.reduce((acc, p) => {
+//     acc[p.species] = (acc[p.species] || 0) + 1;
+//     return acc;
+// }, {} as Record<string, number>);
+// console.log("• reduce() - Comptage par espèce:", nbrParEspece);
 
-// // reduceRight() - Réduit de droite à gauche
+// reduceRight() - Réduit de droite à gauche
 // const derniersNoms = penguins.slice(-3).reduceRight((acc, p) => 
 //     acc + p.species + " ", ""
 // );
